@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Review System</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Event Review System</h1>
+
+        <!-- Submit Review Form -->
+        <section class="form-section">
+            <h2>Submit Review</h2>
+            <form id="submitReviewForm">
+                <div class="form-group">
+                    <label for="eventId">Event ID:</label>
+                    <input type="text" id="eventId" name="eventId">
+                </div>
+                <div class="form-group">
+                    <label for="registrationExperience">Registration Experience:</label>
+                    <input type="number" id="registrationExperience" name="registrationExperience" min="1" max="5">
+                </div>
+                <div class="form-group">
+                    <label for="eventExperience">Event Experience:</label>
+                    <input type="number" id="eventExperience" name="eventExperience" min="1" max="5">
+                </div>
+                <div class="form-group">
+                    <label for="breakfastExperience">Breakfast Experience:</label>
+                    <input type="number" id="breakfastExperience" name="breakfastExperience" min="1" max="5">
+                </div>
+                <div class="form-group">
+                    <label for="overallRating">Overall Rating:</label>
+                    <input type="number" id="overallRating" name="overallRating" min="1" max="5">
+                </div>
+                <button type="submit" class="btn">Submit Review</button>
+            </form>
+        </section>
+
+        <!-- Other Forms and Summary Section -->
+        <section class="other-section">
+            <!-- Like Review Form -->
+            <div class="form-section">
+                <h2>Like Review</h2>
+                <form id="likeReviewForm">
+                    <div class="form-group">
+                        <label for="reviewId">Review ID:</label>
+                        <input type="text" id="reviewId" name="reviewId">
+                    </div>
+                    <button type="submit" class="btn">Like Review</button>
+                </form>
+            </div>
+
+            <!-- Report Review Form -->
+            <div class="form-section">
+                <h2>Report Review</h2>
+                <form id="reportReviewForm">
+                    <div class="form-group">
+                        <label for="reportReviewId">Review ID:</label>
+                        <input type="text" id="reportReviewId" name="reportReviewId">
+                    </div>
+                    <button type="submit" class="btn">Report Review</button>
+                </form>
+            </div>
+
+            <!-- Respond to Review Form -->
+            <div class="form-section">
+                <h2>Respond to Review</h2>
+                <form id="respondToReviewForm">
+                    <div class="form-group">
+                        <label for="respondReviewId">Review ID:</label>
+                        <input type="text" id="respondReviewId" name="respondReviewId">
+                    </div>
+                    <div class="form-group">
+                        <label for="response">Response:</label>
+                        <input type="text" id="response" name="response">
+                    </div>
+                    <button type="submit" class="btn">Respond to Review</button>
+                </form>
+            </div>
+
+            <!-- Generate Summary Form -->
+            <div class="form-section">
+                <h2>Generate Summary</h2>
+                <form id="generateSummaryForm">
+                    <div class="form-group">
+                        <label for="summaryEventId">Event ID:</label>
+                        <input type="text" id="summaryEventId" name="summaryEventId">
+                    </div>
+                    <button type="button" onclick="generateSummary()" class="btn">Generate Summary</button>
+                    <!-- Display summary -->
+                    <div id="summaryDisplay" class="summary"></div>
+                </form>
+            </div>
+
+            <!-- Retrieve Ratings Form -->
+            <div class="form-section">
+                <h2>Retrieve Ratings</h2>
+                <form id="retrieveRatingsForm">
+                    <div class="form-group">
+                        <label for="ratingsEventId">Event ID:</label>
+                        <input type="text" id="ratingsEventId" name="eventId">
+                    </div>
+                    <button type="button" onclick="retrieveRatings()" class="btn">Retrieve Ratings</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Display retrieved ratings -->
+        <div id="ratingsDisplay" class="ratings-container"></div>
+
+        <!-- Pagination Section -->
+        <section class="pagination-section">
+            <h2>Pagination</h2>
+            <form id="paginationForm">
+                <div class="form-group">
+                    <label for="page">Page:</label>
+                    <input type="number" id="page" name="page" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="perPage">Per Page:</label>
+                    <input type="number" id="perPage" name="perPage" min="1">
+                </div>
+                <button type="submit" class="btn">Fetch Reviews</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Script for handling form submission -->
+    <script src="script.js"></script> <!-- Link to JavaScript file -->
+</body>
+</html>
